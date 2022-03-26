@@ -40,7 +40,8 @@ namespace paint123
         }
 
 
-
+        public Color font;
+        public Color back;
         public NumericUpDown[] var_fields = new NumericUpDown[1];
         NumericUpDown wid = new NumericUpDown();
         private Painter p;
@@ -164,6 +165,30 @@ namespace paint123
             fill.Visible = true;
             var_fields[0].Visible = true;
             p.InsType = Painter.InstrumentType.Triangle;
+        }
+
+        private void main_color_Click(object sender, EventArgs e)
+        {
+            ColorDialog nn = new ColorDialog();
+            nn.AllowFullOpen = true;
+            nn.ShowHelp = true;
+
+            if (nn.ShowDialog() == DialogResult.OK) 
+            {
+                main_color.BackColor = nn.Color;
+            };
+        }
+
+        private void back_color_Click(object sender, EventArgs e)
+        {
+            ColorDialog nn = new ColorDialog();
+            nn.AllowFullOpen = true;
+            nn.ShowHelp = true;
+
+            if (nn.ShowDialog() == DialogResult.OK)
+            {
+                back_color.BackColor = nn.Color;
+            };
         }
     }
 }
