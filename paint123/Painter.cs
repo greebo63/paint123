@@ -13,9 +13,10 @@ namespace paint123
         public enum InstrumentType
         {
             PenDrawer,
-            RectDrawer,
-            RectFiller,
             Line,
+            RectDrawer,
+            Ell,
+            Arrow
         }
 
         private Image? _img;
@@ -46,9 +47,10 @@ namespace paint123
             ContainerSize = containerSize;
             _ins.Add(new PenDrawer(10));
             //_ins.Add(new RectDrawer(true));
-            _ins.Add(new RectDrawer());
-            
             _ins.Add(new Line());
+            _ins.Add(new RectDrawer());
+            _ins.Add(new Ellipse());
+            _ins.Add(new Arrow());
         }
 
 

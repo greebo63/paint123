@@ -23,12 +23,20 @@ namespace paint123
             wid.Visible = true;
             wid.Value = 1;
             var_fields[0] = wid;
+            wid.Visible = false;
             Controls.Add(wid);
 
-            fill.Location = new Point(1400, 30);
-            fill.Size = new Size(50, 50);
+            fill.Location = new Point(1400, 45);
+            fill.Size = new Size(20, 20);
             fill.Checked = false;
+            fill.Visible = false;
             Controls.Add(fill);
+
+            not_fill.Location = new Point(1430, 45);
+            not_fill.Size = new Size(20, 20);
+            not_fill.Checked = true;
+            not_fill.Visible = false;
+            Controls.Add(not_fill);
         }
 
 
@@ -37,7 +45,18 @@ namespace paint123
         NumericUpDown wid = new NumericUpDown();
         private Painter p;
         private RadioButton fill = new RadioButton();
+        private RadioButton not_fill = new RadioButton();
 
+
+        private void fill_Click(object sender)
+        {
+            not_fill.Checked = false;
+        }
+
+        private void not_fill_Click(object sender)
+        {
+            fill.Checked = false;
+        }
 
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -59,7 +78,7 @@ namespace paint123
             //p.InsType = e.Button == MouseButtons.Left
             //    ? Painter.InstrumentType.PenDrawer
             //    : Painter.InstrumentType.RectFiller;
-            if (p.InsType == Painter.InstrumentType.RectDrawer)
+            if (p.InsType == Painter.InstrumentType.RectDrawer || p.InsType==Painter.InstrumentType.Ell)
             {
                 p.StartDrawing(e.Location, (int)wid.Value, fill.Checked);
             }
@@ -86,27 +105,52 @@ namespace paint123
 
         private void ButPencil_Click(object sender, EventArgs e)
         {
-            
+            not_fill.Visible = false;
+            fill.Visible = false;
+            var_fields[0].Visible = false;
+            var_fields[0].Value = 1;
             p.InsType = Painter.InstrumentType.PenDrawer;
         }
 
         private void ButPen_Click(object sender, EventArgs e)
         {
-            
+            not_fill.Visible = false;
+            fill.Visible = false;
+            var_fields[0].Visible = true;
             p.InsType = Painter.InstrumentType.PenDrawer;
             
         }
 
         private void ButLine_Click(object sender, EventArgs e)
         {
-            
+            not_fill.Visible = false;
+            fill.Visible = false;
+            var_fields[0].Visible = true;
             p.InsType = Painter.InstrumentType.Line;
         }
 
         private void Rect_Click(object sender, EventArgs e)
         {
-            //Controls.Remove(var_fields[0]);
-            p.InsType = Painter.InstrumentType.RectFiller;
+            not_fill.Visible = true;
+            fill.Visible = true;
+            var_fields[0].Visible = true;
+            p.InsType = Painter.InstrumentType.RectDrawer;
+        }
+
+        private void Ellipse_Click(object sender, EventArgs e)
+        {
+            not_fill.Visible = true;
+            fill.Visible = true;
+            var_fields[0].Visible = true;
+            p.InsType = Painter.InstrumentType.Ell;
+        }
+
+        private void Arrow_Click(object sender, EventArgs e)
+        {
+            not_fill.Visible = false;
+            fill.Visible = false;
+            var_fields[0].Visible = true;
+            p.InsType = Painter.InstrumentType.Arrow;
         }
     }
 }

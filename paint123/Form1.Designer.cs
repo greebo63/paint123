@@ -35,6 +35,8 @@ namespace paint123
             this.ButPen = new System.Windows.Forms.Button();
             this.ButLine = new System.Windows.Forms.Button();
             this.Rect = new System.Windows.Forms.Button();
+            this.Ellipse = new System.Windows.Forms.Button();
+            this.Arrow = new System.Windows.Forms.Button();
             this.panel_with_buttons.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,16 +54,19 @@ namespace paint123
             // 
             // panel_with_buttons
             // 
-            this.panel_with_buttons.ColumnCount = 5;
-            this.panel_with_buttons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5.38358F));
-            this.panel_with_buttons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 94.61642F));
-            this.panel_with_buttons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 44F));
-            this.panel_with_buttons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 37F));
+            this.panel_with_buttons.ColumnCount = 6;
+            this.panel_with_buttons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 58.80399F));
+            this.panel_with_buttons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 41.19601F));
+            this.panel_with_buttons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 516F));
+            this.panel_with_buttons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.panel_with_buttons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 611F));
+            this.panel_with_buttons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.panel_with_buttons.Controls.Add(this.ButPencil, 0, 0);
             this.panel_with_buttons.Controls.Add(this.ButPen, 0, 1);
             this.panel_with_buttons.Controls.Add(this.ButLine, 1, 0);
             this.panel_with_buttons.Controls.Add(this.Rect, 1, 1);
+            this.panel_with_buttons.Controls.Add(this.Ellipse, 2, 0);
+            this.panel_with_buttons.Controls.Add(this.Arrow, 2, 1);
             this.panel_with_buttons.Location = new System.Drawing.Point(12, 12);
             this.panel_with_buttons.Name = "panel_with_buttons";
             this.panel_with_buttons.RowCount = 2;
@@ -92,7 +97,7 @@ namespace paint123
             // 
             // ButLine
             // 
-            this.ButLine.Location = new System.Drawing.Point(39, 3);
+            this.ButLine.Location = new System.Drawing.Point(118, 3);
             this.ButLine.Name = "ButLine";
             this.ButLine.Size = new System.Drawing.Size(29, 27);
             this.ButLine.TabIndex = 2;
@@ -102,13 +107,33 @@ namespace paint123
             // 
             // Rect
             // 
-            this.Rect.Location = new System.Drawing.Point(39, 36);
+            this.Rect.Location = new System.Drawing.Point(118, 36);
             this.Rect.Name = "Rect";
             this.Rect.Size = new System.Drawing.Size(29, 27);
             this.Rect.TabIndex = 3;
             this.Rect.Text = "r";
             this.Rect.UseVisualStyleBackColor = true;
             this.Rect.Click += new System.EventHandler(this.Rect_Click);
+            // 
+            // Ellipse
+            // 
+            this.Ellipse.Location = new System.Drawing.Point(198, 3);
+            this.Ellipse.Name = "Ellipse";
+            this.Ellipse.Size = new System.Drawing.Size(94, 27);
+            this.Ellipse.TabIndex = 4;
+            this.Ellipse.Text = "e";
+            this.Ellipse.UseVisualStyleBackColor = true;
+            this.Ellipse.Click += new System.EventHandler(this.Ellipse_Click);
+            // 
+            // Arrow
+            // 
+            this.Arrow.Location = new System.Drawing.Point(198, 36);
+            this.Arrow.Name = "Arrow";
+            this.Arrow.Size = new System.Drawing.Size(94, 27);
+            this.Arrow.TabIndex = 5;
+            this.Arrow.Text = "a";
+            this.Arrow.UseVisualStyleBackColor = true;
+            this.Arrow.Click += new System.EventHandler(this.Arrow_Click);
             // 
             // Form1
             // 
@@ -132,6 +157,8 @@ namespace paint123
         private System.Windows.Forms.Button ButPen;
         private System.Windows.Forms.Button ButLine;
         private System.Windows.Forms.Button Rect;
+        private System.Windows.Forms.Button Ellipse;
+        private System.Windows.Forms.Button Arrow;
     }
 }
 
