@@ -37,6 +37,7 @@ namespace paint123
             this.Rect = new System.Windows.Forms.Button();
             this.Ellipse = new System.Windows.Forms.Button();
             this.Arrow = new System.Windows.Forms.Button();
+            this.Triangle = new System.Windows.Forms.Button();
             this.panel_with_buttons.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,8 +58,8 @@ namespace paint123
             this.panel_with_buttons.ColumnCount = 6;
             this.panel_with_buttons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 58.80399F));
             this.panel_with_buttons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 41.19601F));
-            this.panel_with_buttons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 516F));
-            this.panel_with_buttons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.panel_with_buttons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 133F));
+            this.panel_with_buttons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 413F));
             this.panel_with_buttons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 611F));
             this.panel_with_buttons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.panel_with_buttons.Controls.Add(this.ButPencil, 0, 0);
@@ -67,6 +68,7 @@ namespace paint123
             this.panel_with_buttons.Controls.Add(this.Rect, 1, 1);
             this.panel_with_buttons.Controls.Add(this.Ellipse, 2, 0);
             this.panel_with_buttons.Controls.Add(this.Arrow, 2, 1);
+            this.panel_with_buttons.Controls.Add(this.Triangle, 3, 0);
             this.panel_with_buttons.Location = new System.Drawing.Point(12, 12);
             this.panel_with_buttons.Name = "panel_with_buttons";
             this.panel_with_buttons.RowCount = 2;
@@ -135,6 +137,16 @@ namespace paint123
             this.Arrow.UseVisualStyleBackColor = true;
             this.Arrow.Click += new System.EventHandler(this.Arrow_Click);
             // 
+            // Triangle
+            // 
+            this.Triangle.Location = new System.Drawing.Point(331, 3);
+            this.Triangle.Name = "Triangle";
+            this.Triangle.Size = new System.Drawing.Size(94, 27);
+            this.Triangle.TabIndex = 6;
+            this.Triangle.Text = "t";
+            this.Triangle.UseVisualStyleBackColor = true;
+            this.Triangle.Click += new System.EventHandler(this.Triangle_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -159,6 +171,7 @@ namespace paint123
         private System.Windows.Forms.Button Rect;
         private System.Windows.Forms.Button Ellipse;
         private System.Windows.Forms.Button Arrow;
+        private System.Windows.Forms.Button Triangle;
     }
 }
 

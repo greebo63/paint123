@@ -78,7 +78,8 @@ namespace paint123
             //p.InsType = e.Button == MouseButtons.Left
             //    ? Painter.InstrumentType.PenDrawer
             //    : Painter.InstrumentType.RectFiller;
-            if (p.InsType == Painter.InstrumentType.RectDrawer || p.InsType==Painter.InstrumentType.Ell)
+            if (p.InsType == Painter.InstrumentType.RectDrawer || p.InsType==Painter.InstrumentType.Ell 
+                || p.InsType == Painter.InstrumentType.Triangle)
             {
                 p.StartDrawing(e.Location, (int)wid.Value, fill.Checked);
             }
@@ -129,6 +130,18 @@ namespace paint123
             p.InsType = Painter.InstrumentType.Line;
         }
 
+        
+
+        private void Arrow_Click(object sender, EventArgs e)
+        {
+            not_fill.Visible = false;
+            fill.Visible = false;
+            var_fields[0].Visible = true;
+            p.InsType = Painter.InstrumentType.Arrow;
+        }
+
+
+        //фигуры с заполнением
         private void Rect_Click(object sender, EventArgs e)
         {
             not_fill.Visible = true;
@@ -145,12 +158,12 @@ namespace paint123
             p.InsType = Painter.InstrumentType.Ell;
         }
 
-        private void Arrow_Click(object sender, EventArgs e)
+        private void Triangle_Click(object sender, EventArgs e)
         {
-            not_fill.Visible = false;
-            fill.Visible = false;
+            not_fill.Visible = true;
+            fill.Visible = true;
             var_fields[0].Visible = true;
-            p.InsType = Painter.InstrumentType.Arrow;
+            p.InsType = Painter.InstrumentType.Triangle;
         }
     }
 }

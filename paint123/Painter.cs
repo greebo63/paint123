@@ -16,7 +16,8 @@ namespace paint123
             Line,
             RectDrawer,
             Ell,
-            Arrow
+            Arrow,
+            Triangle
         }
 
         private Image? _img;
@@ -45,12 +46,12 @@ namespace paint123
         public Painter( Size containerSize)
         {
             ContainerSize = containerSize;
-            _ins.Add(new PenDrawer(10));
-            //_ins.Add(new RectDrawer(true));
+            _ins.Add(new PenDrawer());
             _ins.Add(new Line());
             _ins.Add(new RectDrawer());
             _ins.Add(new Ellipse());
             _ins.Add(new Arrow());
+            _ins.Add(new Triangle());
         }
 
 

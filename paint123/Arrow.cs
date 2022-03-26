@@ -14,6 +14,7 @@ namespace paint123
         {
             if (StartPoint is not null)
             {
+                
                 Pen.CustomEndCap = new AdjustableArrowCap(10, 10);
                 g.DrawLine(Pen, (Point)StartPoint, currentPoint);
             }
