@@ -40,8 +40,8 @@ namespace paint123
         }
 
 
-        public Color font;
-        public Color back;
+        public Color main= Color.Black;
+        public Color back=Color.White;
         public NumericUpDown[] var_fields = new NumericUpDown[1];
         NumericUpDown wid = new NumericUpDown();
         private Painter p;
@@ -82,11 +82,11 @@ namespace paint123
             if (p.InsType == Painter.InstrumentType.RectDrawer || p.InsType==Painter.InstrumentType.Ell 
                 || p.InsType == Painter.InstrumentType.Triangle)
             {
-                p.StartDrawing(e.Location, (int)wid.Value, fill.Checked);
+                p.StartDrawing(e.Location, (int)wid.Value, fill.Checked, main,back);
             }
             else
             {
-                p.StartDrawing(e.Location, (int)wid.Value);
+                p.StartDrawing(e.Location, (int)wid.Value,main);
             }
         }
 
@@ -176,6 +176,7 @@ namespace paint123
             if (nn.ShowDialog() == DialogResult.OK) 
             {
                 main_color.BackColor = nn.Color;
+                main = nn.Color;
             };
         }
 
@@ -188,6 +189,7 @@ namespace paint123
             if (nn.ShowDialog() == DialogResult.OK)
             {
                 back_color.BackColor = nn.Color;
+                back = nn.Color;
             };
         }
     }

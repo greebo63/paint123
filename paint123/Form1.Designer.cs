@@ -151,7 +151,7 @@ namespace paint123
             // 
             // main_color
             // 
-            this.main_color.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.main_color.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.main_color.Location = new System.Drawing.Point(269, 16);
             this.main_color.Name = "main_color";
             this.main_color.Size = new System.Drawing.Size(31, 29);
@@ -170,7 +170,7 @@ namespace paint123
             // 
             // back_color
             // 
-            this.back_color.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.back_color.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.back_color.Location = new System.Drawing.Point(269, 52);
             this.back_color.Name = "back_color";
             this.back_color.Size = new System.Drawing.Size(31, 29);

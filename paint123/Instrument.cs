@@ -9,8 +9,8 @@ namespace paint123
 {
     public abstract class Instrument
     {
-        private Pen _pen = new Pen(Color.Black, 1);
-        private Brush _brush = new SolidBrush(Color.Black);
+        private Pen _pen=new Pen(Color.Black, 1);
+        private Brush _brush= new SolidBrush(Color.Black);
         public bool? fill;
         protected Point? StartPoint { get; set; }
         public Pen Pen
@@ -27,17 +27,20 @@ namespace paint123
 
         protected Image? CurrentImage;
 
-        public void Start(Point location, Image currentImage,int wid)
+        public void Start(Point location, Image currentImage,int wid, Color main)
         {
             Pen.Width = wid;
             CurrentImage = currentImage;
             StartPoint = location;
+            _pen.Color = main;
         }
 
-        public void Start(Point location, Image currentImage, int wid, bool _fill)
+        public void Start(Point location, Image currentImage, int wid, bool _fill, Color main, Color back)
         {
             fill = _fill;
             Pen.Width = wid;
+            _pen.Color = main;
+            _brush = new SolidBrush(back);
             CurrentImage = currentImage;
             StartPoint = location;
         }

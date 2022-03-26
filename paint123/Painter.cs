@@ -63,19 +63,19 @@ namespace paint123
             }
         }
 
-        public void StartDrawing(Point location,int wid)
+        public void StartDrawing(Point location,int wid, Color main)
         {
             if (_img is not null)
             {
-                _ins[(int)InsType].Start(location, (Image)_img, wid);
+                _ins[(int)InsType].Start(location, (Image)_img, wid, main);
             }
         }
 
-        public void StartDrawing(Point location, int wid, bool _fill)
+        public void StartDrawing(Point location, int wid, bool _fill, Color main, Color back)
         {
             if (_img is not null)
             {
-                _ins[(int)InsType].Start(location, (Image)_img, wid, _fill);
+                _ins[(int)InsType].Start(location, (Image)_img, wid, _fill, main, back);
             }
         }
 
