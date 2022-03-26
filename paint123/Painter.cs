@@ -17,7 +17,10 @@ namespace paint123
             RectDrawer,
             Ell,
             Arrow,
-            Triangle
+            Triangle,
+            Text,
+            Pipette,
+            
         }
 
         private Image? _img;
@@ -52,9 +55,14 @@ namespace paint123
             _ins.Add(new Ellipse());
             _ins.Add(new Arrow());
             _ins.Add(new Triangle());
+            _ins.Add(new Text());
         }
 
 
+        public Color GetColor(Point cur)
+        {
+            return ((Bitmap)_img).GetPixel(cur.X,cur.Y);
+        }
         public void Paint(Graphics g)
         {
             if (_img is not null)
@@ -98,9 +106,14 @@ namespace paint123
                 );
             if (_img is not null)
                 bg.Graphics.DrawImage(_img, 0, 0);
-            else bg.Graphics.Clear(Color.White);
-            _ins[(int)InsType].Draw(bg.Graphics, location);
-            bg.Render(tempG);
+            else 
+            
+                bg.Graphics.Clear(Color.White);
+            if (InsType != InstrumentType.Pipette)
+            {
+                _ins[(int)InsType].Draw(bg.Graphics, location);
+                bg.Render(tempG);
+            }
             //bg.Dispose();
         }
     }

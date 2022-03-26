@@ -42,6 +42,9 @@ namespace paint123
             this.main_color = new System.Windows.Forms.Button();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.back_color = new System.Windows.Forms.Button();
+            this.Eraser = new System.Windows.Forms.Button();
+            this.Pipette = new System.Windows.Forms.Button();
+            this.but_text = new System.Windows.Forms.Button();
             this.panel_with_buttons.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,11 +62,13 @@ namespace paint123
             // 
             // panel_with_buttons
             // 
-            this.panel_with_buttons.ColumnCount = 4;
+            this.panel_with_buttons.ColumnCount = 5;
             this.panel_with_buttons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.panel_with_buttons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.panel_with_buttons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.panel_with_buttons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 41F));
+            this.panel_with_buttons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.panel_with_buttons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.panel_with_buttons.Controls.Add(this.Pipette, 3, 1);
             this.panel_with_buttons.Controls.Add(this.ButPencil, 0, 0);
             this.panel_with_buttons.Controls.Add(this.ButLine, 1, 0);
             this.panel_with_buttons.Controls.Add(this.Rect, 1, 1);
@@ -71,12 +76,14 @@ namespace paint123
             this.panel_with_buttons.Controls.Add(this.Triangle, 3, 0);
             this.panel_with_buttons.Controls.Add(this.ButPen, 0, 1);
             this.panel_with_buttons.Controls.Add(this.Arrow, 2, 1);
+            this.panel_with_buttons.Controls.Add(this.Eraser, 4, 0);
+            this.panel_with_buttons.Controls.Add(this.but_text, 4, 1);
             this.panel_with_buttons.Location = new System.Drawing.Point(12, 12);
             this.panel_with_buttons.Name = "panel_with_buttons";
             this.panel_with_buttons.RowCount = 2;
             this.panel_with_buttons.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
             this.panel_with_buttons.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
-            this.panel_with_buttons.Size = new System.Drawing.Size(161, 69);
+            this.panel_with_buttons.Size = new System.Drawing.Size(204, 69);
             this.panel_with_buttons.TabIndex = 0;
             // 
             // ButPencil
@@ -178,6 +185,36 @@ namespace paint123
             this.back_color.UseVisualStyleBackColor = false;
             this.back_color.Click += new System.EventHandler(this.back_color_Click);
             // 
+            // Eraser
+            // 
+            this.Eraser.Location = new System.Drawing.Point(163, 3);
+            this.Eraser.Name = "Eraser";
+            this.Eraser.Size = new System.Drawing.Size(30, 29);
+            this.Eraser.TabIndex = 7;
+            this.Eraser.Text = "e";
+            this.Eraser.UseVisualStyleBackColor = true;
+            this.Eraser.Click += new System.EventHandler(this.Eraser_Click);
+            // 
+            // Pipette
+            // 
+            this.Pipette.Location = new System.Drawing.Point(123, 38);
+            this.Pipette.Name = "Pipette";
+            this.Pipette.Size = new System.Drawing.Size(30, 29);
+            this.Pipette.TabIndex = 4;
+            this.Pipette.Text = "p";
+            this.Pipette.UseVisualStyleBackColor = true;
+            this.Pipette.Click += new System.EventHandler(this.Pipette_Click);
+            // 
+            // but_text
+            // 
+            this.but_text.Location = new System.Drawing.Point(163, 38);
+            this.but_text.Name = "but_text";
+            this.but_text.Size = new System.Drawing.Size(30, 29);
+            this.but_text.TabIndex = 8;
+            this.but_text.Text = "t";
+            this.but_text.UseVisualStyleBackColor = true;
+            this.but_text.Click += new System.EventHandler(this.but_text_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -211,6 +248,9 @@ namespace paint123
         private System.Windows.Forms.Button main_color;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.Button back_color;
+        private System.Windows.Forms.Button Pipette;
+        private System.Windows.Forms.Button Eraser;
+        private System.Windows.Forms.Button but_text;
     }
 }
 

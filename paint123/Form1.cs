@@ -39,7 +39,7 @@ namespace paint123
             Controls.Add(not_fill);
         }
 
-
+        public bool reverse = false;
         public Color main= Color.Black;
         public Color back=Color.White;
         public NumericUpDown[] var_fields = new NumericUpDown[1];
@@ -79,21 +79,36 @@ namespace paint123
             //p.InsType = e.Button == MouseButtons.Left
             //    ? Painter.InstrumentType.PenDrawer
             //    : Painter.InstrumentType.RectFiller;
-            if (p.InsType == Painter.InstrumentType.RectDrawer || p.InsType==Painter.InstrumentType.Ell 
-                || p.InsType == Painter.InstrumentType.Triangle)
+            if (p.InsType == Painter.InstrumentType.Pipette)
             {
-                p.StartDrawing(e.Location, (int)wid.Value, fill.Checked, main,back);
+                if (e.Button == MouseButtons.Left) { main = p.GetColor(e.Location); main_color.BackColor = main; }
+                else
+                {
+                    back = p.GetColor(e.Location);
+                    back_color.BackColor = back;
+                }
             }
             else
             {
-                p.StartDrawing(e.Location, (int)wid.Value,main);
+                if (p.InsType == Painter.InstrumentType.RectDrawer || p.InsType == Painter.InstrumentType.Ell
+                    || p.InsType == Painter.InstrumentType.Triangle)
+                {
+                    p.StartDrawing(e.Location, (int)wid.Value, fill.Checked, main, back);
+                }
+                else
+                {
+                    p.StartDrawing(e.Location, (int)wid.Value, reverse ? back : main);
+                }
             }
         }
 
         private void panel1_MouseUp(object sender, MouseEventArgs e)
         {
-            p.StopDrawing(e.Location);
-            panel1.Update();
+            if (p.InsType != Painter.InstrumentType.Pipette)
+            {
+                p.StopDrawing(e.Location);
+                panel1.Update();
+            }
         }
 
         private void panel1_MouseMove(object sender, MouseEventArgs e)
@@ -107,6 +122,7 @@ namespace paint123
 
         private void ButPencil_Click(object sender, EventArgs e)
         {
+            reverse = false;
             not_fill.Visible = false;
             fill.Visible = false;
             var_fields[0].Visible = false;
@@ -116,6 +132,7 @@ namespace paint123
 
         private void ButPen_Click(object sender, EventArgs e)
         {
+            reverse = false;
             not_fill.Visible = false;
             fill.Visible = false;
             var_fields[0].Visible = true;
@@ -125,6 +142,8 @@ namespace paint123
 
         private void ButLine_Click(object sender, EventArgs e)
         {
+            reverse = false;
+            reverse = false;
             not_fill.Visible = false;
             fill.Visible = false;
             var_fields[0].Visible = true;
@@ -135,6 +154,7 @@ namespace paint123
 
         private void Arrow_Click(object sender, EventArgs e)
         {
+            reverse = false;
             not_fill.Visible = false;
             fill.Visible = false;
             var_fields[0].Visible = true;
@@ -191,6 +211,28 @@ namespace paint123
                 back_color.BackColor = nn.Color;
                 back = nn.Color;
             };
+        }
+
+        private void Pipette_Click(object sender, EventArgs e)
+        {
+            reverse = false;
+            p.InsType = Painter.InstrumentType.Pipette;
+                
+        }
+
+        private void Eraser_Click(object sender, EventArgs e)
+        {
+            not_fill.Visible = false;
+            fill.Visible = false;
+            var_fields[0].Visible = true;
+            reverse = true;
+            p.InsType = Painter.InstrumentType.PenDrawer;
+        }
+
+        private void but_text_Click(object sender, EventArgs e)
+        {
+            reverse = false;
+            p.InsType = Painter.InstrumentType.Text;
         }
     }
 }
