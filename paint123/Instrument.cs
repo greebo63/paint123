@@ -12,6 +12,7 @@ namespace paint123
         private Pen _pen=new Pen(Color.Black, 1);
         private Brush _brush= new SolidBrush(Color.Black);
         public bool? fill;
+        public string data;
         protected Point? StartPoint { get; set; }
         public Pen Pen
         {
@@ -33,6 +34,15 @@ namespace paint123
             CurrentImage = currentImage;
             StartPoint = location;
             _pen.Color = main;
+        }
+
+        public void Start(Point location, Image currentImage, int wid, Color main, string text)
+        {
+            Pen.Width = wid;
+            CurrentImage = currentImage;
+            StartPoint = location;
+            _pen.Color = main;
+            data = text;
         }
 
         public void Start(Point location, Image currentImage, int wid, bool _fill, Color main, Color back)

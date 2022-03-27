@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace paint123
 {
@@ -11,13 +12,10 @@ namespace paint123
     {
         public override void Draw(Graphics g, Point currentPoint)
         {
-            Font myFont = new Font(FontFamily.GenericSansSerif, 20,
-        FontStyle.Regular);
-            Graphics.FromImage(CurrentImage).TextRenderingHint = System.Drawing.Text.TextRenderingHint.SingleBitPerPixel;
+            Font style = new Font("Arial", Pen.Width);
+            g.DrawString(data, style, Brush, currentPoint);
 
-            // Draw the string.
-            Graphics.FromImage(CurrentImage).DrawString("Hello World", myFont,
-                Brushes.Firebrick, 20.0F, 20.0F);
+
         }
     }
 }

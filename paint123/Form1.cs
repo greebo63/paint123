@@ -16,6 +16,9 @@ namespace paint123
         {
             InitializeComponent();
             p = new Painter(panel1.Size);
+
+            textBox1.Visible = false;
+
             //create button for changing width of pen
             
             wid.Location = new Point(1400, 15);
@@ -79,25 +82,32 @@ namespace paint123
             //p.InsType = e.Button == MouseButtons.Left
             //    ? Painter.InstrumentType.PenDrawer
             //    : Painter.InstrumentType.RectFiller;
-            if (p.InsType == Painter.InstrumentType.Pipette)
+            if (p.InsType == Painter.InstrumentType.Text)
             {
-                if (e.Button == MouseButtons.Left) { main = p.GetColor(e.Location); main_color.BackColor = main; }
-                else
-                {
-                    back = p.GetColor(e.Location);
-                    back_color.BackColor = back;
-                }
+                p.StartDrawing(e.Location, (int)wid.Value, main, textBox1.Text);
             }
             else
             {
-                if (p.InsType == Painter.InstrumentType.RectDrawer || p.InsType == Painter.InstrumentType.Ell
-                    || p.InsType == Painter.InstrumentType.Triangle)
+                if (p.InsType == Painter.InstrumentType.Pipette)
                 {
-                    p.StartDrawing(e.Location, (int)wid.Value, fill.Checked, main, back);
+                    if (e.Button == MouseButtons.Left) { main = p.GetColor(e.Location); main_color.BackColor = main; }
+                    else
+                    {
+                        back = p.GetColor(e.Location);
+                        back_color.BackColor = back;
+                    }
                 }
                 else
                 {
-                    p.StartDrawing(e.Location, (int)wid.Value, reverse ? back : main);
+                    if (p.InsType == Painter.InstrumentType.RectDrawer || p.InsType == Painter.InstrumentType.Ell
+                        || p.InsType == Painter.InstrumentType.Triangle)
+                    {
+                        p.StartDrawing(e.Location, (int)wid.Value, fill.Checked, main, back);
+                    }
+                    else
+                    {
+                        p.StartDrawing(e.Location, (int)wid.Value, reverse ? back : main);
+                    }
                 }
             }
         }
@@ -231,8 +241,12 @@ namespace paint123
 
         private void but_text_Click(object sender, EventArgs e)
         {
+            var_fields[0].Visible = true;
             reverse = false;
+            textBox1.Visible = true;
             p.InsType = Painter.InstrumentType.Text;
         }
+
+
     }
 }

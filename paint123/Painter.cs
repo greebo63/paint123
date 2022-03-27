@@ -87,6 +87,14 @@ namespace paint123
             }
         }
 
+        public void StartDrawing(Point location, int wid, Color main, string text)
+        {
+            if (_img is not null)
+            {
+                _ins[(int)InsType].Start(location, (Image)_img, wid, main, text);
+            }
+        }
+
         public void StopDrawing(Point location)
         {
             if (_img is not null)
@@ -96,6 +104,8 @@ namespace paint123
             }
             _ins[(int)InsType].Stop();
         }
+
+        
 
         public void Draw(Point location, Graphics tempG)
         {
