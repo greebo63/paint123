@@ -12,8 +12,9 @@ namespace paint123
     {
         public override void Draw(Graphics g, Point currentPoint)
         {
+            Brush some = new SolidBrush(Pen.Color);
             Font style = new Font("Arial", Pen.Width);
-            g.DrawString(data, style, Brush, currentPoint);
+            g.DrawString(data, style, some, currentPoint);
 
 
         }

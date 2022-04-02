@@ -34,6 +34,7 @@ namespace paint123
             CurrentImage = currentImage;
             StartPoint = location;
             _pen.Color = main;
+            
         }
 
         public void Start(Point location, Image currentImage, int wid, Color main, string text)
