@@ -64,6 +64,8 @@ namespace paint123
             this.blue_but = new System.Windows.Forms.Button();
             this.greenyellow_but = new System.Windows.Forms.Button();
             this.wid = new System.Windows.Forms.NumericUpDown();
+            this.not_fill = new System.Windows.Forms.RadioButton();
+            this.fill = new System.Windows.Forms.RadioButton();
             this.panel_with_buttons.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.wid)).BeginInit();
@@ -443,16 +445,40 @@ namespace paint123
             // 
             // wid
             // 
-            this.wid.Location = new System.Drawing.Point(1081, 15);
+            this.wid.Location = new System.Drawing.Point(1174, 15);
             this.wid.Name = "wid";
-            this.wid.Size = new System.Drawing.Size(150, 27);
+            this.wid.Size = new System.Drawing.Size(50, 27);
             this.wid.TabIndex = 7;
+            // 
+            // not_fill
+            // 
+            this.not_fill.AutoSize = true;
+            this.not_fill.Location = new System.Drawing.Point(1081, 12);
+            this.not_fill.Name = "not_fill";
+            this.not_fill.Size = new System.Drawing.Size(76, 24);
+            this.not_fill.TabIndex = 8;
+            this.not_fill.TabStop = true;
+            this.not_fill.Text = "Not fill";
+            this.not_fill.UseVisualStyleBackColor = true;
+            // 
+            // fill
+            // 
+            this.fill.AutoSize = true;
+            this.fill.Location = new System.Drawing.Point(1081, 42);
+            this.fill.Name = "fill";
+            this.fill.Size = new System.Drawing.Size(49, 24);
+            this.fill.TabIndex = 9;
+            this.fill.TabStop = true;
+            this.fill.Text = "Fill";
+            this.fill.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1460, 720);
+            this.Controls.Add(this.fill);
+            this.Controls.Add(this.not_fill);
             this.Controls.Add(this.wid);
             this.Controls.Add(this.back_color);
             this.Controls.Add(this.main_color);
@@ -508,6 +534,8 @@ namespace paint123
         private System.Windows.Forms.Button aquamarine_but;
         private System.Windows.Forms.Button blue_but;
         private System.Windows.Forms.NumericUpDown wid;
+        private System.Windows.Forms.RadioButton not_fill;
+        private System.Windows.Forms.RadioButton fill;
     }
 }
 

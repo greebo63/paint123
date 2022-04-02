@@ -23,7 +23,7 @@ namespace paint123
             //create buttons for changing width of pen
             
             //wid.Location = new Point(1400, 15);
-            wid.Size = new Size(50, 50);
+           // wid.Size = new Size(50, 50);
             wid.Visible = true;
             wid.Value = 1;
             var_fields[0] = wid;
@@ -33,14 +33,14 @@ namespace paint123
             Controls.Add(wid);
 
 
-            fill.Location = new Point(1400, 45);
-            fill.Size = new Size(20, 20);
+            //fill.Location = new Point(1400, 45);
+            //fill.Size = new Size(20, 20);
             fill.Checked = false;
             fill.Visible = false;
             Controls.Add(fill);
 
-            not_fill.Location = new Point(1430, 45);
-            not_fill.Size = new Size(20, 20);
+           // not_fill.Location = new Point(1430, 45);
+            //not_fill.Size = new Size(20, 20);
             not_fill.Checked = true;
             not_fill.Visible = false;
             Controls.Add(not_fill);
@@ -52,8 +52,8 @@ namespace paint123
         public NumericUpDown[] var_fields = new NumericUpDown[1];
         //NumericUpDown wid = new NumericUpDown();
         private Painter p;
-        private RadioButton fill = new RadioButton();
-        private RadioButton not_fill = new RadioButton();
+        //private RadioButton fill = new RadioButton();
+        //private RadioButton not_fill = new RadioButton();
         public Color but_color_main
         {
             set
@@ -488,5 +488,7 @@ namespace paint123
                 but_color_back = aquamarine_but.BackColor;
             }
         }
+
+
     }
 }
