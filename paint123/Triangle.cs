@@ -24,7 +24,7 @@ namespace paint123
                 //}
                 //g.DrawPolygon(Pen, var);
                 Rectangle some = new Rectangle();
-                some = GetRectangle((Point)StartPoint, currentPoint);
+                some = true_figure ? GetRectangle((Point)StartPoint, currentPoint,true_figure) : GetRectangle((Point)StartPoint, currentPoint);
                 Point[] var = new Point[3];
                 var[0] = (Point)StartPoint;
                 if (currentPoint.X > ((Point)StartPoint).X)
