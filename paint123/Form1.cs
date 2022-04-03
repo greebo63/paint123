@@ -493,27 +493,17 @@ namespace paint123
 
         private void save_file_Click(object sender, EventArgs e)
         {
-            //Stream myStream;
-            //SaveFileDialog saveFileDialog1 = new SaveFileDialog();
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                //if ((myStream = saveFileDialog1.OpenFile()) != null)
-                
-                    
-                    //myStream.Close();
 
                     if (saveFileDialog1.FileName != "")
                     {
-                        //var sw = new StreamWriter(saveFileDialog1.FileName,false, Encoding.);
-                        // Saves the Image via a FileStream created by the OpenFile method.
-                        //System.IO.FileStream fs =(System.IO.FileStream)saveFileDialog1.OpenFile();
-                        // Saves the Image in the appropriate ImageFormat based upon the
-                        // File type selected in the dialog box.
-                        // NOTE that the FilterIndex property is one-based.
-
-                        //p._img.Save("img.png", System.Drawing.Imaging.ImageFormat.Jpeg);
-                        p._img.Save(saveFileDialog1.FileName);
-                        //fs.Close();
+                    if (saveFileDialog1.FilterIndex == 1)
+                    {
+                        p._img.Save(saveFileDialog1.FileName + ".jpg");
+                    }
+                    else
+                        p._img.Save(saveFileDialog1.FileName+".png", System.Drawing.Imaging.ImageFormat.Png);
                     }
                     
             }

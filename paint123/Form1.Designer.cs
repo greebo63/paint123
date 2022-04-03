@@ -499,8 +499,8 @@ namespace paint123
             // 
             // saveFileDialog1
             // 
-            this.saveFileDialog1.DefaultExt = "jpg";
-            this.saveFileDialog1.Filter = "JPeg Image (*.jpg)|jpg";
+            this.saveFileDialog1.Filter = "JPeg Image (*.jpg)| jpg | Png image |png";
+            this.saveFileDialog1.FilterIndex = 2;
             this.saveFileDialog1.RestoreDirectory = true;
             // 
             // tableLayoutPanel2
