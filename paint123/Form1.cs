@@ -491,6 +491,10 @@ namespace paint123
             }
         } 
 
+        //buttons of save and open
+
+
+
         private void save_file_Click(object sender, EventArgs e)
         {
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
@@ -509,6 +513,14 @@ namespace paint123
             }
         }
 
+        private void open_file_Click(object sender, EventArgs e)
+        {
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                p._img = Image.FromFile(openFileDialog1.FileName);
+            }
+        }
+
 
         //actions with shift
 
@@ -524,6 +536,7 @@ namespace paint123
         {
             if (true_figure) true_figure = false;
         }
+
 
     }
 }

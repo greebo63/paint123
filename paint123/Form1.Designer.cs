@@ -563,6 +563,7 @@ namespace paint123
             this.open_file.TabIndex = 11;
             this.open_file.Text = "Open file";
             this.open_file.UseVisualStyleBackColor = true;
+            this.open_file.Click += new System.EventHandler(this.open_file_Click);
             // 
             // Form1
             // 
