@@ -21,32 +21,18 @@ namespace paint123
             textBox1.Visible = true;
             textBox1.Enabled = false;
 
-            //create buttons for changing width of pen
-
-            //wid.Location = new Point(1400, 15);
-            // wid.Size = new Size(50, 50);
             wid.Visible = true;
             wid.Value = 1;
             var_fields[0] = wid;
             wid.Visible = true;
-            //wid.Anchor = AnchorStyles.Top;
-            //wid.Anchor = AnchorStyles.Left;
-            //Controls.Add(wid);
 
 
-            //fill.Location = new Point(1400, 45);
-            //fill.Size = new Size(20, 20);
+
             fill.Checked = false;
             fill.Enabled = false;
-            //Controls.Add(fill);
 
-            // not_fill.Location = new Point(1430, 45);
-            //not_fill.Size = new Size(20, 20);
             not_fill.Checked = true;
             not_fill.Enabled = false;
-            //Controls.Add(not_fill);
-
-            //panel1.Focused = true;
         }
 
         public bool true_figure=false;
@@ -54,10 +40,8 @@ namespace paint123
         public Color main = Color.Black;
         public Color back = Color.White;
         public NumericUpDown[] var_fields = new NumericUpDown[1];
-        //NumericUpDown wid = new NumericUpDown();
         private Painter p;
-        //private RadioButton fill = new RadioButton();
-        //private RadioButton not_fill = new RadioButton();
+
         public Color but_color_main
         {
             set
@@ -94,9 +78,6 @@ namespace paint123
 
         private void panel1_MouseDown(object sender, MouseEventArgs e)
         {
-            //p.InsType = e.Button == MouseButtons.Left
-            //    ? Painter.InstrumentType.PenDrawer
-            //    : Painter.InstrumentType.RectFiller;
             if (true_figure)
             {
                 Brush some = new SolidBrush(Color.Black);
@@ -446,7 +427,6 @@ namespace paint123
                 but_color_main = ocean_but.BackColor;
             }
             else
-
             {
                 but_color_back = ocean_but.BackColor;
             }
