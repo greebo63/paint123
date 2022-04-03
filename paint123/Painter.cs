@@ -24,6 +24,7 @@ namespace paint123
         }
 
         public Image? _img;
+        public Color panel_color=Color.White;
         private readonly List<Instrument> _ins = new();
         public InstrumentType InsType
         {
@@ -41,7 +42,7 @@ namespace paint123
             {
                 _containerSize = value;
                 var img = new Bitmap(_containerSize.Width, _containerSize.Height, PixelFormat.Format24bppRgb);
-                Graphics.FromImage(img).Clear(Color.White);
+                Graphics.FromImage(img).Clear(panel_color);
                 var ig = Graphics.FromImage(img);
                 if (_img is not null)
                     ig.DrawImage(this._img, 0, 0);

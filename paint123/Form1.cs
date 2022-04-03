@@ -471,7 +471,7 @@ namespace paint123
             }
         } 
 
-        //buttons of save and open
+        //buttons of save and open and size of panel
 
 
 
@@ -501,6 +501,12 @@ namespace paint123
             }
         }
 
+        private void size_panel_Click(object sender, EventArgs e)
+        {
+            panel1.Width = (int)width_panel.Value;
+            panel1.Height = (int)height_panel.Value;
+        }
+
 
         //actions with shift
 
@@ -515,6 +521,11 @@ namespace paint123
         private void Form1_KeyUp(object sender, KeyEventArgs e)
         {
             if (true_figure) true_figure = false;
+        }
+
+        private void back_color_BackColorChanged(object sender, EventArgs e)
+        {
+            p.panel_color = back;
         }
     }
 }

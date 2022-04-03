@@ -74,20 +74,28 @@ namespace paint123
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.open_file = new System.Windows.Forms.Button();
+            this.size_panel = new System.Windows.Forms.Button();
+            this.colorDialog2 = new System.Windows.Forms.ColorDialog();
+            this.width_panel = new System.Windows.Forms.NumericUpDown();
+            this.height_panel = new System.Windows.Forms.NumericUpDown();
             this.panel_with_buttons.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.wid)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.width_panel)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.height_panel)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.ImeMode = System.Windows.Forms.ImeMode.On;
             this.panel1.Location = new System.Drawing.Point(0, 120);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1448, 588);
-            this.panel1.TabIndex = 0;
+            this.panel1.TabIndex = 1;
+            this.panel1.TabStop = true;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
@@ -257,6 +265,7 @@ namespace paint123
             this.back_color.Size = new System.Drawing.Size(24, 26);
             this.back_color.TabIndex = 3;
             this.back_color.UseVisualStyleBackColor = false;
+            this.back_color.BackColorChanged += new System.EventHandler(this.back_color_BackColorChanged);
             this.back_color.Click += new System.EventHandler(this.back_color_Click);
             // 
             // textBox1
@@ -522,7 +531,7 @@ namespace paint123
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1211, 79);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1198, 79);
             this.tableLayoutPanel2.TabIndex = 10;
             // 
             // tableLayoutPanel4
@@ -557,7 +566,7 @@ namespace paint123
             // 
             // open_file
             // 
-            this.open_file.Location = new System.Drawing.Point(100, 3);
+            this.open_file.Location = new System.Drawing.Point(100, 2);
             this.open_file.Name = "open_file";
             this.open_file.Size = new System.Drawing.Size(94, 29);
             this.open_file.TabIndex = 11;
@@ -565,18 +574,77 @@ namespace paint123
             this.open_file.UseVisualStyleBackColor = true;
             this.open_file.Click += new System.EventHandler(this.open_file_Click);
             // 
+            // size_panel
+            // 
+            this.size_panel.Location = new System.Drawing.Point(200, 2);
+            this.size_panel.Name = "size_panel";
+            this.size_panel.Size = new System.Drawing.Size(94, 29);
+            this.size_panel.TabIndex = 12;
+            this.size_panel.Text = "button1";
+            this.size_panel.UseVisualStyleBackColor = true;
+            this.size_panel.Click += new System.EventHandler(this.size_panel_Click);
+            // 
+            // width_panel
+            // 
+            this.width_panel.Location = new System.Drawing.Point(300, 2);
+            this.width_panel.Maximum = new decimal(new int[] {
+            1920,
+            0,
+            0,
+            0});
+            this.width_panel.Minimum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.width_panel.Name = "width_panel";
+            this.width_panel.Size = new System.Drawing.Size(68, 27);
+            this.width_panel.TabIndex = 13;
+            this.width_panel.Value = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            // 
+            // height_panel
+            // 
+            this.height_panel.Location = new System.Drawing.Point(374, 2);
+            this.height_panel.Maximum = new decimal(new int[] {
+            1080,
+            0,
+            0,
+            0});
+            this.height_panel.Minimum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.height_panel.Name = "height_panel";
+            this.height_panel.Size = new System.Drawing.Size(68, 27);
+            this.height_panel.TabIndex = 14;
+            this.height_panel.Value = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1460, 720);
+            this.Controls.Add(this.height_panel);
+            this.Controls.Add(this.width_panel);
+            this.Controls.Add(this.size_panel);
             this.Controls.Add(this.open_file);
             this.Controls.Add(this.save_file);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.panel1);
             this.KeyPreview = true;
+            this.MinimumSize = new System.Drawing.Size(1330, 200);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Form1";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyUp);
@@ -587,6 +655,8 @@ namespace paint123
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.width_panel)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.height_panel)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -639,6 +709,10 @@ namespace paint123
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.Button open_file;
+        private System.Windows.Forms.Button size_panel;
+        private System.Windows.Forms.ColorDialog colorDialog2;
+        private System.Windows.Forms.NumericUpDown width_panel;
+        private System.Windows.Forms.NumericUpDown height_panel;
     }
 }
 
