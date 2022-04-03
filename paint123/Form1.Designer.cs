@@ -49,21 +49,21 @@ namespace paint123
             this.textBox1 = new System.Windows.Forms.RichTextBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.yel_but = new System.Windows.Forms.Button();
-            this.green_but = new System.Windows.Forms.Button();
             this.aqua_but = new System.Windows.Forms.Button();
             this.fuchsia_but = new System.Windows.Forms.Button();
             this.purple_but = new System.Windows.Forms.Button();
             this.red_but = new System.Windows.Forms.Button();
-            this.skin_but = new System.Windows.Forms.Button();
+            this.pale_but = new System.Windows.Forms.Button();
             this.maroon_but = new System.Windows.Forms.Button();
+            this.gray_but = new System.Windows.Forms.Button();
             this.olive_but = new System.Windows.Forms.Button();
             this.teal_but = new System.Windows.Forms.Button();
-            this.gray_but = new System.Windows.Forms.Button();
             this.ocean_but = new System.Windows.Forms.Button();
-            this.pale_but = new System.Windows.Forms.Button();
             this.aquamarine_but = new System.Windows.Forms.Button();
             this.blue_but = new System.Windows.Forms.Button();
             this.greenyellow_but = new System.Windows.Forms.Button();
+            this.skin_but = new System.Windows.Forms.Button();
+            this.green_but = new System.Windows.Forms.Button();
             this.wid = new System.Windows.Forms.NumericUpDown();
             this.not_fill = new System.Windows.Forms.RadioButton();
             this.fill = new System.Windows.Forms.RadioButton();
@@ -269,32 +269,32 @@ namespace paint123
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.ColumnCount = 9;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 37F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 37F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 37F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 37F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 38F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 39F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 79F));
-            this.tableLayoutPanel1.Controls.Add(this.yel_but, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.green_but, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.aqua_but, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.fuchsia_but, 3, 0);
-            this.tableLayoutPanel1.Controls.Add(this.purple_but, 3, 1);
-            this.tableLayoutPanel1.Controls.Add(this.red_but, 4, 0);
-            this.tableLayoutPanel1.Controls.Add(this.skin_but, 4, 1);
-            this.tableLayoutPanel1.Controls.Add(this.maroon_but, 5, 0);
-            this.tableLayoutPanel1.Controls.Add(this.olive_but, 5, 1);
-            this.tableLayoutPanel1.Controls.Add(this.teal_but, 6, 0);
-            this.tableLayoutPanel1.Controls.Add(this.gray_but, 6, 1);
-            this.tableLayoutPanel1.Controls.Add(this.ocean_but, 7, 0);
-            this.tableLayoutPanel1.Controls.Add(this.pale_but, 7, 1);
-            this.tableLayoutPanel1.Controls.Add(this.aquamarine_but, 8, 1);
-            this.tableLayoutPanel1.Controls.Add(this.blue_but, 2, 1);
-            this.tableLayoutPanel1.Controls.Add(this.greenyellow_but, 8, 0);
+            this.tableLayoutPanel1.ColumnCount = 8;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Controls.Add(this.yel_but, 3, 1);
+            this.tableLayoutPanel1.Controls.Add(this.aqua_but, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.fuchsia_but, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.purple_but, 2, 1);
+            this.tableLayoutPanel1.Controls.Add(this.red_but, 3, 0);
+            this.tableLayoutPanel1.Controls.Add(this.pale_but, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.maroon_but, 4, 0);
+            this.tableLayoutPanel1.Controls.Add(this.gray_but, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.olive_but, 4, 1);
+            this.tableLayoutPanel1.Controls.Add(this.teal_but, 5, 0);
+            this.tableLayoutPanel1.Controls.Add(this.ocean_but, 6, 0);
+            this.tableLayoutPanel1.Controls.Add(this.aquamarine_but, 7, 1);
+            this.tableLayoutPanel1.Controls.Add(this.blue_but, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.greenyellow_but, 7, 0);
+            this.tableLayoutPanel1.Controls.Add(this.skin_but, 6, 1);
+            this.tableLayoutPanel1.Controls.Add(this.green_but, 5, 1);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(291, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
@@ -306,28 +306,17 @@ namespace paint123
             // yel_but
             // 
             this.yel_but.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.yel_but.Location = new System.Drawing.Point(3, 3);
+            this.yel_but.Location = new System.Drawing.Point(117, 37);
             this.yel_but.Name = "yel_but";
             this.yel_but.Size = new System.Drawing.Size(31, 27);
             this.yel_but.TabIndex = 4;
             this.yel_but.UseVisualStyleBackColor = false;
             this.yel_but.MouseDown += new System.Windows.Forms.MouseEventHandler(this.yel_but_MouseDown);
             // 
-            // green_but
-            // 
-            this.green_but.BackColor = System.Drawing.Color.Lime;
-            this.green_but.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.green_but.Location = new System.Drawing.Point(3, 37);
-            this.green_but.Name = "green_but";
-            this.green_but.Size = new System.Drawing.Size(31, 27);
-            this.green_but.TabIndex = 5;
-            this.green_but.UseVisualStyleBackColor = false;
-            this.green_but.MouseDown += new System.Windows.Forms.MouseEventHandler(this.green_but_MouseDown);
-            // 
             // aqua_but
             // 
             this.aqua_but.BackColor = System.Drawing.Color.Aqua;
-            this.aqua_but.Location = new System.Drawing.Point(40, 3);
+            this.aqua_but.Location = new System.Drawing.Point(41, 3);
             this.aqua_but.Name = "aqua_but";
             this.aqua_but.Size = new System.Drawing.Size(31, 27);
             this.aqua_but.TabIndex = 6;
@@ -337,7 +326,7 @@ namespace paint123
             // fuchsia_but
             // 
             this.fuchsia_but.BackColor = System.Drawing.Color.Fuchsia;
-            this.fuchsia_but.Location = new System.Drawing.Point(77, 3);
+            this.fuchsia_but.Location = new System.Drawing.Point(79, 3);
             this.fuchsia_but.Name = "fuchsia_but";
             this.fuchsia_but.Size = new System.Drawing.Size(31, 27);
             this.fuchsia_but.TabIndex = 8;
@@ -347,7 +336,7 @@ namespace paint123
             // purple_but
             // 
             this.purple_but.BackColor = System.Drawing.Color.Purple;
-            this.purple_but.Location = new System.Drawing.Point(77, 37);
+            this.purple_but.Location = new System.Drawing.Point(79, 37);
             this.purple_but.Name = "purple_but";
             this.purple_but.Size = new System.Drawing.Size(31, 27);
             this.purple_but.TabIndex = 9;
@@ -357,37 +346,47 @@ namespace paint123
             // red_but
             // 
             this.red_but.BackColor = System.Drawing.Color.Red;
-            this.red_but.Location = new System.Drawing.Point(114, 3);
+            this.red_but.Location = new System.Drawing.Point(117, 3);
             this.red_but.Name = "red_but";
             this.red_but.Size = new System.Drawing.Size(31, 27);
             this.red_but.TabIndex = 10;
             this.red_but.UseVisualStyleBackColor = false;
             this.red_but.MouseDown += new System.Windows.Forms.MouseEventHandler(this.red_but_MouseDown);
             // 
-            // skin_but
+            // pale_but
             // 
-            this.skin_but.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.skin_but.Location = new System.Drawing.Point(114, 37);
-            this.skin_but.Name = "skin_but";
-            this.skin_but.Size = new System.Drawing.Size(31, 27);
-            this.skin_but.TabIndex = 11;
-            this.skin_but.UseVisualStyleBackColor = false;
-            this.skin_but.MouseDown += new System.Windows.Forms.MouseEventHandler(this.skin_but_MouseDown);
+            this.pale_but.BackColor = System.Drawing.Color.Black;
+            this.pale_but.Location = new System.Drawing.Point(3, 3);
+            this.pale_but.Name = "pale_but";
+            this.pale_but.Size = new System.Drawing.Size(31, 27);
+            this.pale_but.TabIndex = 17;
+            this.pale_but.UseVisualStyleBackColor = false;
+            this.pale_but.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pale_but_MouseDown);
             // 
             // maroon_but
             // 
             this.maroon_but.BackColor = System.Drawing.Color.Maroon;
-            this.maroon_but.Location = new System.Drawing.Point(151, 3);
+            this.maroon_but.Location = new System.Drawing.Point(155, 3);
             this.maroon_but.Name = "maroon_but";
             this.maroon_but.Size = new System.Drawing.Size(31, 27);
             this.maroon_but.TabIndex = 12;
             this.maroon_but.UseVisualStyleBackColor = false;
             this.maroon_but.MouseDown += new System.Windows.Forms.MouseEventHandler(this.maroon_but_MouseDown);
             // 
+            // gray_but
+            // 
+            this.gray_but.BackColor = System.Drawing.Color.White;
+            this.gray_but.Location = new System.Drawing.Point(3, 37);
+            this.gray_but.Name = "gray_but";
+            this.gray_but.Size = new System.Drawing.Size(31, 27);
+            this.gray_but.TabIndex = 15;
+            this.gray_but.UseVisualStyleBackColor = false;
+            this.gray_but.MouseDown += new System.Windows.Forms.MouseEventHandler(this.gray_but_MouseDown);
+            // 
             // olive_but
             // 
             this.olive_but.BackColor = System.Drawing.Color.Olive;
-            this.olive_but.Location = new System.Drawing.Point(151, 37);
+            this.olive_but.Location = new System.Drawing.Point(155, 37);
             this.olive_but.Name = "olive_but";
             this.olive_but.Size = new System.Drawing.Size(31, 27);
             this.olive_but.TabIndex = 13;
@@ -397,47 +396,27 @@ namespace paint123
             // teal_but
             // 
             this.teal_but.BackColor = System.Drawing.Color.Teal;
-            this.teal_but.Location = new System.Drawing.Point(188, 3);
+            this.teal_but.Location = new System.Drawing.Point(193, 3);
             this.teal_but.Name = "teal_but";
             this.teal_but.Size = new System.Drawing.Size(31, 27);
             this.teal_but.TabIndex = 14;
             this.teal_but.UseVisualStyleBackColor = false;
             this.teal_but.MouseDown += new System.Windows.Forms.MouseEventHandler(this.teal_but_MouseDown);
             // 
-            // gray_but
-            // 
-            this.gray_but.BackColor = System.Drawing.Color.Gray;
-            this.gray_but.Location = new System.Drawing.Point(188, 37);
-            this.gray_but.Name = "gray_but";
-            this.gray_but.Size = new System.Drawing.Size(31, 27);
-            this.gray_but.TabIndex = 15;
-            this.gray_but.UseVisualStyleBackColor = false;
-            this.gray_but.MouseDown += new System.Windows.Forms.MouseEventHandler(this.gray_but_MouseDown);
-            // 
             // ocean_but
             // 
             this.ocean_but.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(107)))), ((int)(((byte)(183)))));
-            this.ocean_but.Location = new System.Drawing.Point(226, 3);
+            this.ocean_but.Location = new System.Drawing.Point(231, 3);
             this.ocean_but.Name = "ocean_but";
             this.ocean_but.Size = new System.Drawing.Size(31, 27);
             this.ocean_but.TabIndex = 16;
             this.ocean_but.UseVisualStyleBackColor = false;
             this.ocean_but.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ocean_but_MouseDown);
             // 
-            // pale_but
-            // 
-            this.pale_but.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.pale_but.Location = new System.Drawing.Point(226, 37);
-            this.pale_but.Name = "pale_but";
-            this.pale_but.Size = new System.Drawing.Size(31, 27);
-            this.pale_but.TabIndex = 17;
-            this.pale_but.UseVisualStyleBackColor = false;
-            this.pale_but.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pale_but_MouseDown);
-            // 
             // aquamarine_but
             // 
             this.aquamarine_but.BackColor = System.Drawing.Color.Aquamarine;
-            this.aquamarine_but.Location = new System.Drawing.Point(265, 37);
+            this.aquamarine_but.Location = new System.Drawing.Point(269, 37);
             this.aquamarine_but.Name = "aquamarine_but";
             this.aquamarine_but.Size = new System.Drawing.Size(31, 27);
             this.aquamarine_but.TabIndex = 19;
@@ -447,7 +426,7 @@ namespace paint123
             // blue_but
             // 
             this.blue_but.BackColor = System.Drawing.Color.Blue;
-            this.blue_but.Location = new System.Drawing.Point(40, 37);
+            this.blue_but.Location = new System.Drawing.Point(41, 37);
             this.blue_but.Name = "blue_but";
             this.blue_but.Size = new System.Drawing.Size(31, 27);
             this.blue_but.TabIndex = 7;
@@ -457,12 +436,33 @@ namespace paint123
             // greenyellow_but
             // 
             this.greenyellow_but.BackColor = System.Drawing.Color.GreenYellow;
-            this.greenyellow_but.Location = new System.Drawing.Point(265, 3);
+            this.greenyellow_but.Location = new System.Drawing.Point(269, 3);
             this.greenyellow_but.Name = "greenyellow_but";
             this.greenyellow_but.Size = new System.Drawing.Size(31, 27);
             this.greenyellow_but.TabIndex = 18;
             this.greenyellow_but.UseVisualStyleBackColor = false;
             this.greenyellow_but.MouseDown += new System.Windows.Forms.MouseEventHandler(this.greenyellow_but_MouseDown);
+            // 
+            // skin_but
+            // 
+            this.skin_but.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.skin_but.Location = new System.Drawing.Point(231, 37);
+            this.skin_but.Name = "skin_but";
+            this.skin_but.Size = new System.Drawing.Size(31, 27);
+            this.skin_but.TabIndex = 11;
+            this.skin_but.UseVisualStyleBackColor = false;
+            this.skin_but.MouseDown += new System.Windows.Forms.MouseEventHandler(this.skin_but_MouseDown);
+            // 
+            // green_but
+            // 
+            this.green_but.BackColor = System.Drawing.Color.Lime;
+            this.green_but.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.green_but.Location = new System.Drawing.Point(193, 37);
+            this.green_but.Name = "green_but";
+            this.green_but.Size = new System.Drawing.Size(31, 27);
+            this.green_but.TabIndex = 5;
+            this.green_but.UseVisualStyleBackColor = false;
+            this.green_but.MouseDown += new System.Windows.Forms.MouseEventHandler(this.green_but_MouseDown);
             // 
             // wid
             // 

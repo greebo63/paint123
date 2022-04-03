@@ -536,7 +536,5 @@ namespace paint123
         {
             if (true_figure) true_figure = false;
         }
-
-
     }
 }
