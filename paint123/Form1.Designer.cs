@@ -92,7 +92,6 @@ namespace paint123
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
             this.panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseUp);
-            this.panel1.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.panel1_PreviewKeyDown);
             this.panel1.Resize += new System.EventHandler(this.panel1_Resize);
             // 
             // save_file
@@ -500,6 +499,7 @@ namespace paint123
             // 
             // saveFileDialog1
             // 
+            this.saveFileDialog1.DefaultExt = "jpg";
             this.saveFileDialog1.Filter = "JPeg Image (*.jpg)|jpg";
             this.saveFileDialog1.RestoreDirectory = true;
             // 

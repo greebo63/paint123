@@ -14,6 +14,9 @@ namespace paint123
         {
             Brush some = new SolidBrush(Pen.Color);
             Font style = new Font("Arial", Pen.Width);
+            RectangleF some1 = new Rectangle();
+            some1 = g.ClipBounds;
+            g.DrawString(data, style, some, some1.Width, some1.Height);
             g.DrawString(data, style, some, currentPoint);
 
 

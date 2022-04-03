@@ -13,16 +13,6 @@ namespace paint123
         {
             if (StartPoint is not null)
             {
-                ////g.DrawImage(CurrentImage, 0, 0);
-                //Point[] var = new Point[3];
-                //var[0] = (Point)StartPoint;
-                //var[1] = new Point(currentPoint.X - (currentPoint.X - ((Point)StartPoint).X) / 2, currentPoint.Y);
-                //var[2] = new Point( currentPoint.X,((Point)StartPoint).Y);
-                //if ((bool)fill)
-                //{
-                //    g.FillPolygon(Brush, var);
-                //}
-                //g.DrawPolygon(Pen, var);
                 Rectangle some = new Rectangle();
                 some = true_figure ? GetRectangle((Point)StartPoint, currentPoint,true_figure) : GetRectangle((Point)StartPoint, currentPoint);
                 Point[] var = new Point[3];
