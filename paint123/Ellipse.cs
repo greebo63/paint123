@@ -16,8 +16,16 @@ namespace paint123
                 //g.DrawImage(CurrentImage, 0, 0);
                 if ((bool)fill)
                 {
+                    if (true_figure)
+                    {
+                        g.FillEllipse(Brush, GetRectangle((Point)StartPoint, currentPoint,true_figure));
+                    }else
                     g.FillEllipse(Brush, GetRectangle((Point)StartPoint, currentPoint));
                 }
+                if (true_figure)
+                {
+                    g.DrawEllipse(Pen, GetRectangle((Point)StartPoint, currentPoint,true_figure));
+                }else
                 g.DrawEllipse(Pen, GetRectangle((Point)StartPoint, currentPoint));
             }
         }
