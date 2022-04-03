@@ -45,8 +45,11 @@ namespace paint123
             not_fill.Checked = true;
             not_fill.Enabled = false;
             //Controls.Add(not_fill);
+
+            //panel1.Focused = true;
         }
 
+        public bool true_figure=false;
         public bool reverse = false;
         public Color main = Color.Black;
         public Color back = Color.White;
@@ -104,6 +107,11 @@ namespace paint123
             //p.InsType = e.Button == MouseButtons.Left
             //    ? Painter.InstrumentType.PenDrawer
             //    : Painter.InstrumentType.RectFiller;
+            if (true_figure)
+            {
+                Brush some = new SolidBrush(Color.Black);
+                Graphics.FromImage(p._img).FillRectangle(some, 200, 200, 500, 500);
+            }
             if (p.InsType == Painter.InstrumentType.Text)
             {
 
@@ -126,7 +134,7 @@ namespace paint123
                     if (p.InsType == Painter.InstrumentType.RectDrawer || p.InsType == Painter.InstrumentType.Ell
                         || p.InsType == Painter.InstrumentType.Triangle)
                     {
-                        p.StartDrawing(e.Location, (int)wid.Value, fill.Checked, main, back);
+                        p.StartDrawing(e.Location, (int)wid.Value, fill.Checked, main, back,true_figure);
                     }
                     else
                     {
@@ -501,9 +509,47 @@ namespace paint123
             {
                 if ((myStream = saveFileDialog1.OpenFile()) != null)
                 {
-                    p._img.Save("img.png", System.Drawing.Imaging.ImageFormat.Jpeg);
-                    myStream.Close();
-                }
+                    
+                    //myStream.Close();
+
+                    if (saveFileDialog1.FileName != "")
+                    {
+                        // Saves the Image via a FileStream created by the OpenFile method.
+                        System.IO.FileStream fs =
+                            (System.IO.FileStream)saveFileDialog1.OpenFile();
+                        // Saves the Image in the appropriate ImageFormat based upon the
+                        // File type selected in the dialog box.
+                        // NOTE that the FilterIndex property is one-based.
+
+                        //p._img.Save("img.png", System.Drawing.Imaging.ImageFormat.Jpeg);
+                        p._img.Save(fs, System.Drawing.Imaging.ImageFormat.Jpeg);
+                        fs.Close();
+                    }
+                    }
+            }
+        }
+
+
+        //actions with shift
+
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.ShiftKey)
+            {
+                true_figure = true;
+            }
+        }
+
+        private void Form1_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (true_figure) true_figure = false;
+        }
+
+        private void panel1_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            if (e.KeyCode == Keys.Shift)
+            {
+                true_figure = true;
             }
         }
     }

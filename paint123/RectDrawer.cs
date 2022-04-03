@@ -24,8 +24,20 @@ namespace paint123
                 if ((bool)fill)
                 {
                     g.FillRectangle(Brush, GetRectangle((Point)StartPoint, currentPoint));
+                   if (true_figure)
+                    {
+                        g.FillRectangle(Brush, GetRectangle((Point)StartPoint, currentPoint,true_figure));
+                        //g.FillRectangle(Brush, ((Point)StartPoint).X, ((Point)StartPoint).Y, ((Point)StartPoint).X-currentPoint.X, ((Point)StartPoint).X - currentPoint.X);
+                        // g.FillRectangle(Brush, GetRectangle(((Point)StartPoint).X, ((Point)StartPoint).Y, currentPoint.X,currentPoint.Y));
+                    }
+                    else g.FillRectangle(Brush, GetRectangle((Point)StartPoint, currentPoint));
                 }
-                g.DrawRectangle(Pen, GetRectangle((Point)StartPoint, currentPoint));
+                if (true_figure)
+                {
+                    g.DrawRectangle(Pen, GetRectangle((Point)StartPoint, currentPoint,true_figure));
+                }
+                else
+                    g.DrawRectangle(Pen, GetRectangle((Point)StartPoint, currentPoint));
             }
         }
     }

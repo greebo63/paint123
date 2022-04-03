@@ -92,6 +92,7 @@ namespace paint123
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
             this.panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseUp);
+            this.panel1.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.panel1_PreviewKeyDown);
             this.panel1.Resize += new System.EventHandler(this.panel1_Resize);
             // 
             // save_file
@@ -499,7 +500,7 @@ namespace paint123
             // 
             // saveFileDialog1
             // 
-            this.saveFileDialog1.Filter = "jpeg image (*.jpg)|jpg";
+            this.saveFileDialog1.Filter = "JPeg Image (*.jpg)|jpg";
             this.saveFileDialog1.RestoreDirectory = true;
             // 
             // tableLayoutPanel2
@@ -573,8 +574,11 @@ namespace paint123
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.panel1);
+            this.KeyPreview = true;
             this.Name = "Form1";
             this.Text = "Form1";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyUp);
             this.panel_with_buttons.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.wid)).EndInit();
