@@ -30,6 +30,7 @@ namespace paint123
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.save_file = new System.Windows.Forms.Button();
             this.panel_with_buttons = new System.Windows.Forms.TableLayoutPanel();
             this.Pipette = new System.Windows.Forms.Button();
             this.ButPencil = new System.Windows.Forms.Button();
@@ -66,22 +67,42 @@ namespace paint123
             this.wid = new System.Windows.Forms.NumericUpDown();
             this.not_fill = new System.Windows.Forms.RadioButton();
             this.fill = new System.Windows.Forms.RadioButton();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.open_file = new System.Windows.Forms.Button();
             this.panel_with_buttons.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.wid)).BeginInit();
+            this.tableLayoutPanel2.SuspendLayout();
+            this.tableLayoutPanel4.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Location = new System.Drawing.Point(0, 104);
+            this.panel1.Location = new System.Drawing.Point(0, 120);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1448, 604);
+            this.panel1.Size = new System.Drawing.Size(1448, 588);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
             this.panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseUp);
             this.panel1.Resize += new System.EventHandler(this.panel1_Resize);
+            // 
+            // save_file
+            // 
+            this.save_file.Location = new System.Drawing.Point(0, 2);
+            this.save_file.Name = "save_file";
+            this.save_file.Size = new System.Drawing.Size(94, 30);
+            this.save_file.TabIndex = 10;
+            this.save_file.Text = "Save as...";
+            this.save_file.UseVisualStyleBackColor = true;
+            this.save_file.Click += new System.EventHandler(this.save_file_Click);
             // 
             // panel_with_buttons
             // 
@@ -101,7 +122,7 @@ namespace paint123
             this.panel_with_buttons.Controls.Add(this.Arrow, 2, 1);
             this.panel_with_buttons.Controls.Add(this.Eraser, 4, 0);
             this.panel_with_buttons.Controls.Add(this.but_text, 4, 1);
-            this.panel_with_buttons.Location = new System.Drawing.Point(12, 12);
+            this.panel_with_buttons.Location = new System.Drawing.Point(3, 3);
             this.panel_with_buttons.Name = "panel_with_buttons";
             this.panel_with_buttons.RowCount = 2;
             this.panel_with_buttons.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
@@ -212,9 +233,9 @@ namespace paint123
             // main_color
             // 
             this.main_color.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.main_color.Location = new System.Drawing.Point(280, 16);
+            this.main_color.Location = new System.Drawing.Point(5, 5);
             this.main_color.Name = "main_color";
-            this.main_color.Size = new System.Drawing.Size(31, 27);
+            this.main_color.Size = new System.Drawing.Size(24, 25);
             this.main_color.TabIndex = 1;
             this.main_color.UseVisualStyleBackColor = false;
             this.main_color.Click += new System.EventHandler(this.main_color_Click);
@@ -231,18 +252,18 @@ namespace paint123
             // back_color
             // 
             this.back_color.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.back_color.Location = new System.Drawing.Point(280, 50);
+            this.back_color.Location = new System.Drawing.Point(5, 38);
             this.back_color.Name = "back_color";
-            this.back_color.Size = new System.Drawing.Size(31, 27);
+            this.back_color.Size = new System.Drawing.Size(24, 26);
             this.back_color.TabIndex = 3;
             this.back_color.UseVisualStyleBackColor = false;
             this.back_color.Click += new System.EventHandler(this.back_color_Click);
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(654, 15);
+            this.textBox1.Location = new System.Drawing.Point(605, 3);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(421, 66);
+            this.textBox1.Size = new System.Drawing.Size(421, 69);
             this.textBox1.TabIndex = 5;
             this.textBox1.Text = "";
             // 
@@ -274,12 +295,12 @@ namespace paint123
             this.tableLayoutPanel1.Controls.Add(this.aquamarine_but, 8, 1);
             this.tableLayoutPanel1.Controls.Add(this.blue_but, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.greenyellow_but, 8, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(340, 15);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(291, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(308, 66);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(308, 69);
             this.tableLayoutPanel1.TabIndex = 6;
             // 
             // yel_but
@@ -296,7 +317,7 @@ namespace paint123
             // 
             this.green_but.BackColor = System.Drawing.Color.Lime;
             this.green_but.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.green_but.Location = new System.Drawing.Point(3, 36);
+            this.green_but.Location = new System.Drawing.Point(3, 37);
             this.green_but.Name = "green_but";
             this.green_but.Size = new System.Drawing.Size(31, 27);
             this.green_but.TabIndex = 5;
@@ -326,7 +347,7 @@ namespace paint123
             // purple_but
             // 
             this.purple_but.BackColor = System.Drawing.Color.Purple;
-            this.purple_but.Location = new System.Drawing.Point(77, 36);
+            this.purple_but.Location = new System.Drawing.Point(77, 37);
             this.purple_but.Name = "purple_but";
             this.purple_but.Size = new System.Drawing.Size(31, 27);
             this.purple_but.TabIndex = 9;
@@ -346,7 +367,7 @@ namespace paint123
             // skin_but
             // 
             this.skin_but.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.skin_but.Location = new System.Drawing.Point(114, 36);
+            this.skin_but.Location = new System.Drawing.Point(114, 37);
             this.skin_but.Name = "skin_but";
             this.skin_but.Size = new System.Drawing.Size(31, 27);
             this.skin_but.TabIndex = 11;
@@ -366,7 +387,7 @@ namespace paint123
             // olive_but
             // 
             this.olive_but.BackColor = System.Drawing.Color.Olive;
-            this.olive_but.Location = new System.Drawing.Point(151, 36);
+            this.olive_but.Location = new System.Drawing.Point(151, 37);
             this.olive_but.Name = "olive_but";
             this.olive_but.Size = new System.Drawing.Size(31, 27);
             this.olive_but.TabIndex = 13;
@@ -386,7 +407,7 @@ namespace paint123
             // gray_but
             // 
             this.gray_but.BackColor = System.Drawing.Color.Gray;
-            this.gray_but.Location = new System.Drawing.Point(188, 36);
+            this.gray_but.Location = new System.Drawing.Point(188, 37);
             this.gray_but.Name = "gray_but";
             this.gray_but.Size = new System.Drawing.Size(31, 27);
             this.gray_but.TabIndex = 15;
@@ -406,7 +427,7 @@ namespace paint123
             // pale_but
             // 
             this.pale_but.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.pale_but.Location = new System.Drawing.Point(226, 36);
+            this.pale_but.Location = new System.Drawing.Point(226, 37);
             this.pale_but.Name = "pale_but";
             this.pale_but.Size = new System.Drawing.Size(31, 27);
             this.pale_but.TabIndex = 17;
@@ -416,7 +437,7 @@ namespace paint123
             // aquamarine_but
             // 
             this.aquamarine_but.BackColor = System.Drawing.Color.Aquamarine;
-            this.aquamarine_but.Location = new System.Drawing.Point(265, 36);
+            this.aquamarine_but.Location = new System.Drawing.Point(265, 37);
             this.aquamarine_but.Name = "aquamarine_but";
             this.aquamarine_but.Size = new System.Drawing.Size(31, 27);
             this.aquamarine_but.TabIndex = 19;
@@ -426,7 +447,7 @@ namespace paint123
             // blue_but
             // 
             this.blue_but.BackColor = System.Drawing.Color.Blue;
-            this.blue_but.Location = new System.Drawing.Point(40, 36);
+            this.blue_but.Location = new System.Drawing.Point(40, 37);
             this.blue_but.Name = "blue_but";
             this.blue_but.Size = new System.Drawing.Size(31, 27);
             this.blue_but.TabIndex = 7;
@@ -445,7 +466,7 @@ namespace paint123
             // 
             // wid
             // 
-            this.wid.Location = new System.Drawing.Point(1174, 15);
+            this.wid.Location = new System.Drawing.Point(1135, 3);
             this.wid.Name = "wid";
             this.wid.Size = new System.Drawing.Size(50, 27);
             this.wid.TabIndex = 7;
@@ -453,7 +474,7 @@ namespace paint123
             // not_fill
             // 
             this.not_fill.AutoSize = true;
-            this.not_fill.Location = new System.Drawing.Point(1081, 12);
+            this.not_fill.Location = new System.Drawing.Point(3, 3);
             this.not_fill.Name = "not_fill";
             this.not_fill.Size = new System.Drawing.Size(76, 24);
             this.not_fill.TabIndex = 8;
@@ -464,7 +485,7 @@ namespace paint123
             // fill
             // 
             this.fill.AutoSize = true;
-            this.fill.Location = new System.Drawing.Point(1081, 42);
+            this.fill.Location = new System.Drawing.Point(3, 37);
             this.fill.Name = "fill";
             this.fill.Size = new System.Drawing.Size(49, 24);
             this.fill.TabIndex = 9;
@@ -472,26 +493,95 @@ namespace paint123
             this.fill.Text = "Fill";
             this.fill.UseVisualStyleBackColor = true;
             // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // saveFileDialog1
+            // 
+            this.saveFileDialog1.Filter = "jpeg image (*.jpg)|jpg";
+            this.saveFileDialog1.RestoreDirectory = true;
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 6;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 231F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 57F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 314F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 428F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 102F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 79F));
+            this.tableLayoutPanel2.Controls.Add(this.wid, 5, 0);
+            this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel4, 4, 0);
+            this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel3, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.panel_with_buttons, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel1, 2, 0);
+            this.tableLayoutPanel2.Controls.Add(this.textBox1, 3, 0);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 35);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 1;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1211, 79);
+            this.tableLayoutPanel2.TabIndex = 10;
+            // 
+            // tableLayoutPanel4
+            // 
+            this.tableLayoutPanel4.ColumnCount = 1;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.Controls.Add(this.not_fill, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.fill, 0, 1);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(1033, 3);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            this.tableLayoutPanel4.RowCount = 2;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(91, 69);
+            this.tableLayoutPanel4.TabIndex = 10;
+            // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.tableLayoutPanel3.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Outset;
+            this.tableLayoutPanel3.ColumnCount = 1;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.Controls.Add(this.main_color, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.back_color, 0, 1);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(234, 3);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 2;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(34, 69);
+            this.tableLayoutPanel3.TabIndex = 10;
+            // 
+            // open_file
+            // 
+            this.open_file.Location = new System.Drawing.Point(100, 3);
+            this.open_file.Name = "open_file";
+            this.open_file.Size = new System.Drawing.Size(94, 29);
+            this.open_file.TabIndex = 11;
+            this.open_file.Text = "Open file";
+            this.open_file.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1460, 720);
-            this.Controls.Add(this.fill);
-            this.Controls.Add(this.not_fill);
-            this.Controls.Add(this.wid);
-            this.Controls.Add(this.back_color);
-            this.Controls.Add(this.main_color);
-            this.Controls.Add(this.tableLayoutPanel1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.open_file);
+            this.Controls.Add(this.save_file);
+            this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.statusStrip1);
-            this.Controls.Add(this.panel_with_buttons);
             this.Controls.Add(this.panel1);
             this.Name = "Form1";
             this.Text = "Form1";
             this.panel_with_buttons.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.wid)).EndInit();
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel4.ResumeLayout(false);
+            this.tableLayoutPanel4.PerformLayout();
+            this.tableLayoutPanel3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -536,6 +626,14 @@ namespace paint123
         private System.Windows.Forms.NumericUpDown wid;
         private System.Windows.Forms.RadioButton not_fill;
         private System.Windows.Forms.RadioButton fill;
+        private System.Windows.Forms.Button save_file;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private System.Windows.Forms.Button open_file;
     }
 }
 

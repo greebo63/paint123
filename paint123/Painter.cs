@@ -23,13 +23,15 @@ namespace paint123
             
         }
 
-        private Image? _img;
+        public Image? _img;
         private readonly List<Instrument> _ins = new();
         public InstrumentType InsType
         {
             get;
             set;
         }
+
+
 
         private Size _containerSize;
         public Size ContainerSize

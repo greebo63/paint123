@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,34 +22,34 @@ namespace paint123
             textBox1.Enabled = false;
 
             //create buttons for changing width of pen
-            
+
             //wid.Location = new Point(1400, 15);
-           // wid.Size = new Size(50, 50);
+            // wid.Size = new Size(50, 50);
             wid.Visible = true;
             wid.Value = 1;
             var_fields[0] = wid;
             wid.Visible = true;
             //wid.Anchor = AnchorStyles.Top;
             //wid.Anchor = AnchorStyles.Left;
-            Controls.Add(wid);
+            //Controls.Add(wid);
 
 
             //fill.Location = new Point(1400, 45);
             //fill.Size = new Size(20, 20);
             fill.Checked = false;
-            fill.Visible = false;
-            Controls.Add(fill);
+            fill.Enabled = false;
+            //Controls.Add(fill);
 
-           // not_fill.Location = new Point(1430, 45);
+            // not_fill.Location = new Point(1430, 45);
             //not_fill.Size = new Size(20, 20);
             not_fill.Checked = true;
-            not_fill.Visible = false;
-            Controls.Add(not_fill);
+            not_fill.Enabled = false;
+            //Controls.Add(not_fill);
         }
 
         public bool reverse = false;
-        public Color main= Color.Black;
-        public Color back=Color.White;
+        public Color main = Color.Black;
+        public Color back = Color.White;
         public NumericUpDown[] var_fields = new NumericUpDown[1];
         //NumericUpDown wid = new NumericUpDown();
         private Painter p;
@@ -156,9 +157,9 @@ namespace paint123
         private void ButPencil_Click(object sender, EventArgs e)
         {
             reverse = false;
-            not_fill.Visible = false;
-            fill.Visible = false;
-            var_fields[0].Visible = false;
+            not_fill.Enabled = false;
+            fill.Enabled = false;
+            var_fields[0].Enabled = false;
             var_fields[0].Value = 1;
             p.InsType = Painter.InstrumentType.PenDrawer;
         }
@@ -166,31 +167,31 @@ namespace paint123
         private void ButPen_Click(object sender, EventArgs e)
         {
             reverse = false;
-            not_fill.Visible = false;
-            fill.Visible = false;
-            var_fields[0].Visible = true;
+            not_fill.Enabled = false;
+            fill.Enabled = false;
+            var_fields[0].Enabled = true;
             p.InsType = Painter.InstrumentType.PenDrawer;
-            
+
         }
 
         private void ButLine_Click(object sender, EventArgs e)
         {
             reverse = false;
             reverse = false;
-            not_fill.Visible = false;
-            fill.Visible = false;
-            var_fields[0].Visible = true;
+            not_fill.Enabled = false;
+            fill.Enabled = false;
+            var_fields[0].Enabled = true;
             p.InsType = Painter.InstrumentType.Line;
         }
 
-        
+
 
         private void Arrow_Click(object sender, EventArgs e)
         {
             reverse = false;
-            not_fill.Visible = false;
-            fill.Visible = false;
-            var_fields[0].Visible = true;
+            not_fill.Enabled = false;
+            fill.Enabled = false;
+            var_fields[0].Enabled = true;
             p.InsType = Painter.InstrumentType.Arrow;
         }
 
@@ -198,25 +199,25 @@ namespace paint123
         //фигуры с заполнением
         private void Rect_Click(object sender, EventArgs e)
         {
-            not_fill.Visible = true;
-            fill.Visible = true;
-            var_fields[0].Visible = true;
+            not_fill.Enabled = true;
+            fill.Enabled = true;
+            var_fields[0].Enabled = true;
             p.InsType = Painter.InstrumentType.RectDrawer;
         }
 
         private void Ellipse_Click(object sender, EventArgs e)
         {
-            not_fill.Visible = true;
-            fill.Visible = true;
-            var_fields[0].Visible = true;
+            not_fill.Enabled = true;
+            fill.Enabled = true;
+            var_fields[0].Enabled = true;
             p.InsType = Painter.InstrumentType.Ell;
         }
 
         private void Triangle_Click(object sender, EventArgs e)
         {
-            not_fill.Visible = true;
-            fill.Visible = true;
-            var_fields[0].Visible = true;
+            not_fill.Enabled = true;
+            fill.Enabled = true;
+            var_fields[0].Enabled = true;
             p.InsType = Painter.InstrumentType.Triangle;
         }
 
@@ -225,15 +226,18 @@ namespace paint123
         private void Pipette_Click(object sender, EventArgs e)
         {
             reverse = false;
+            not_fill.Enabled = false;
+            fill.Enabled = false;
+            var_fields[0].Enabled = false;
             p.InsType = Painter.InstrumentType.Pipette;
 
         }
 
         private void Eraser_Click(object sender, EventArgs e)
         {
-            not_fill.Visible = false;
-            fill.Visible = false;
-            var_fields[0].Visible = true;
+            not_fill.Enabled = false;
+            fill.Enabled = false;
+            var_fields[0].Enabled = true;
             reverse = true;
             p.InsType = Painter.InstrumentType.PenDrawer;
         }
@@ -241,9 +245,9 @@ namespace paint123
         private void but_text_Click(object sender, EventArgs e)
         {
             textBox1.Enabled = true;
-            var_fields[0].Visible = true;
+            var_fields[0].Enabled = true;
             reverse = false;
-            textBox1.Visible = true;
+            //textBox1.Visible = true;
             p.InsType = Painter.InstrumentType.Text;
         }
 
@@ -255,7 +259,7 @@ namespace paint123
             nn.AllowFullOpen = true;
             nn.ShowHelp = true;
 
-            if (nn.ShowDialog() == DialogResult.OK) 
+            if (nn.ShowDialog() == DialogResult.OK)
             {
                 main_color.BackColor = nn.Color;
                 main = nn.Color;
@@ -487,8 +491,20 @@ namespace paint123
             {
                 but_color_back = aquamarine_but.BackColor;
             }
+        } 
+
+        private void save_file_Click(object sender, EventArgs e)
+        {
+            Stream myStream;
+            //SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                if ((myStream = saveFileDialog1.OpenFile()) != null)
+                {
+                    p._img.Save("img.png", System.Drawing.Imaging.ImageFormat.Jpeg);
+                    myStream.Close();
+                }
+            }
         }
-
-
     }
 }
