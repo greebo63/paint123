@@ -13,18 +13,26 @@ namespace paint123
         public enum InstrumentType
         {
             PenDrawer,
-            RectDrawer,
-            RectFiller,
             Line,
+            RectDrawer,
+            Ell,
+            Arrow,
+            Triangle,
+            Text,
+            Pipette,
+            
         }
 
-        private Image? _img;
+        public Image? _img;
+        public Color panel_color=Color.White;
         private readonly List<Instrument> _ins = new();
         public InstrumentType InsType
         {
             get;
             set;
         }
+
+
 
         private Size _containerSize;
         public Size ContainerSize
@@ -34,7 +42,7 @@ namespace paint123
             {
                 _containerSize = value;
                 var img = new Bitmap(_containerSize.Width, _containerSize.Height, PixelFormat.Format24bppRgb);
-                Graphics.FromImage(img).Clear(Color.White);
+                Graphics.FromImage(img).Clear(panel_color);
                 var ig = Graphics.FromImage(img);
                 if (_img is not null)
                     ig.DrawImage(this._img, 0, 0);
@@ -44,14 +52,20 @@ namespace paint123
         public Painter( Size containerSize)
         {
             ContainerSize = containerSize;
-            _ins.Add(new PenDrawer(10));
-            //_ins.Add(new RectDrawer(true));
-            _ins.Add(new RectDrawer());
-            
+            _ins.Add(new PenDrawer());
             _ins.Add(new Line());
+            _ins.Add(new RectDrawer());
+            _ins.Add(new Ellipse());
+            _ins.Add(new Arrow());
+            _ins.Add(new Triangle());
+            _ins.Add(new Text());
         }
 
 
+        public Color GetColor(Point cur)
+        {
+            return ((Bitmap)_img).GetPixel(cur.X,cur.Y);
+        }
         public void Paint(Graphics g)
         {
             if (_img is not null)
@@ -60,19 +74,27 @@ namespace paint123
             }
         }
 
-        public void StartDrawing(Point location,int wid)
+        public void StartDrawing(Point location,int wid, Color main)
         {
             if (_img is not null)
             {
-                _ins[(int)InsType].Start(location, (Image)_img, wid);
+                _ins[(int)InsType].Start(location, (Image)_img, wid, main);
             }
         }
 
-        public void StartDrawing(Point location, int wid, bool _fill)
+        public void StartDrawing(Point location, int wid, bool _fill, Color main, Color back, bool true_figure)
         {
             if (_img is not null)
             {
-                _ins[(int)InsType].Start(location, (Image)_img, wid, _fill);
+                _ins[(int)InsType].Start(location, (Image)_img, wid, _fill, main, back, true_figure);
+            }
+        }
+
+        public void StartDrawing(Point location, int wid, Color main, string text)
+        {
+            if (_img is not null)
+            {
+                _ins[(int)InsType].Start(location, (Image)_img, wid, main, text);
             }
         }
 
@@ -86,6 +108,8 @@ namespace paint123
             _ins[(int)InsType].Stop();
         }
 
+        
+
         public void Draw(Point location, Graphics tempG)
         {
             var bg =
@@ -95,9 +119,14 @@ namespace paint123
                 );
             if (_img is not null)
                 bg.Graphics.DrawImage(_img, 0, 0);
-            else bg.Graphics.Clear(Color.White);
-            _ins[(int)InsType].Draw(bg.Graphics, location);
-            bg.Render(tempG);
+            else 
+            
+                bg.Graphics.Clear(Color.White);
+            if (InsType != InstrumentType.Pipette)
+            {
+                _ins[(int)InsType].Draw(bg.Graphics, location);
+                bg.Render(tempG);
+            }
             //bg.Dispose();
         }
     }
